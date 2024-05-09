@@ -1,6 +1,8 @@
 # Random Person data generator
 This is more of a help project, that is meant to help me generate the data to my Access database
+
 It generates random names, surnames, phone numbers from text files
+
 And also other stuff via random module built in python
 
 ### Main problem
@@ -42,6 +44,7 @@ for surname in surnames:
 file.close()
 ```
 I was about to try this code, then I realised it would take too much time to execute it
+
 I calculated, that this code has a complexity of n^3
 ```python
 for surname in surnames: # n
@@ -50,7 +53,9 @@ for surname in surnames: # n
 ```
 Since every iteration or even 'in' keyword nested in each other multiplies the time complexity by n
 
+
 Hence I looked into the data and analyzed it more
+
 and I invented this:
 ```python
 for surname in surnames:
@@ -69,10 +74,13 @@ for surname in surnames:
             valid_surnames.append(surname)
 ```
 before writing this, I ran the previous code, but at the end calculated the max length of a surname from the list and it was 17 characters long
+
 When I looked into those weird rows, I saw that the names were starting somewhere about 255th character of a line
 
 Instead of iterating for every line in the list of lines just to find the space
+
 I just used 'try ... except' block to force the check if the string has a high index (for example 70), therefore if it has those weird spaces
+
 'except' in this example is used as some kind of 'else' statement for 'try', due to the fact, in 'except', we are certain, that the line has only the surname and nothing more, so we can add it to the list if the list does not contain it
 However, when the line has this index of 70, the program slices the string into the two variables:
 - last: for lastname; it takes characters from the beginning to the 20th index, why not 17th? As I wasn't sure whether it will cut the last letter or leave the space at the end, so it was safer to just strip it afterwards
