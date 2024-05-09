@@ -1,0 +1,6 @@
+.git
+.idea/
+.idea
+__pycache__
+dane_do_generatora/
+dane_do_generatora
