@@ -15,7 +15,7 @@ from Fireman import Fireman
 # id_dyzur: losowy numer >= 2 i <= 7
 
 try:
-    con_string = r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\sebek\\OneDrive - Zespół Szkół Komunikacji im. Hipolita Cegielskiego w Poznaniu\Dokumenty\\projekt Access\\StrazPozarna.accdb;'
+    con_string = r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=yourdatabase.accdb;'
     conn = pyodbc.connect(con_string)
  
     cursor = conn.cursor()
